@@ -14,6 +14,7 @@ function toDoList() {
     }
     clearInput.value = '';
     markOnClick()
+    markCompleted()
 }
 
 function markOnClick() {
@@ -24,6 +25,27 @@ function markOnClick() {
                 document.querySelector('.mark-task').classList.remove('mark-task');
             }
             e.target.classList.add('mark-task');
+        })
+    }
+}
+
+function markCompleted() {
+    const toDoList = document.querySelectorAll('.task');
+    for (let i = 0; i < toDoList.length; i += 1) {
+        toDoList[i].addEventListener('dblclick', function(e) {
+            const haveTheClass = toDoList[i].classList;
+            console.log('Oi')
+            // e.target.classList.add('completed');
+            for (let s = 0; s < haveTheClass.length; s += 1) {
+                console.log("for");
+                if (haveTheClass[s] === 'completed') {
+                    console.log("r");
+                    e.target.classList.remove('completed');
+                } else {
+                    console.log("a");
+                    e.target.classList.add('completed');
+                }
+            }
         })
     }
 }
