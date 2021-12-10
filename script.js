@@ -20,7 +20,10 @@ function markOnClick() {
     const toDoList = document.querySelectorAll('.task');
     for (let i = 0; i < toDoList.length; i += 1) {
         toDoList[i].addEventListener('click', function(e) {
-            e.target.style.backgroundColor = 'rgb(128, 128, 128)';
+            if (document.querySelector('.mark-task') !== null) {
+                document.querySelector('.mark-task').classList.remove('mark-task');
+            }
+            e.target.classList.add('mark-task');
         })
     }
 }
