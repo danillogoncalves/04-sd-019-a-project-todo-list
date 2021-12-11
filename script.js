@@ -4,6 +4,7 @@ function toDoList() {
     const orderedList = document.querySelector('#lista-tarefas');
     const task = document.createElement('li')
     task.classList.add('task');
+    task.addEventListener('dblclick', markCompleted);
     const inputTask = document.querySelector('#texto-tarefa').value;
     const clearInput = document.querySelector('#texto-tarefa');
     if (inputTask === '') {
@@ -14,7 +15,7 @@ function toDoList() {
     }
     clearInput.value = '';
     markOnClick()
-    markCompleted()
+    // markCompleted()
 }
 
 function markOnClick() {
@@ -29,11 +30,7 @@ function markOnClick() {
     }
 }
 
-function markCompleted() {
-    const toDoList = document.querySelectorAll('.task');
-    for (let i = 0; i < toDoList.length; i += 1) {
-        toDoList[i].addEventListener('dblclick', function(e) {
-            e.target.classList.toggle('completed');
-        })
-    }
+function markCompleted(e) {
+    console.log(e);
+    e.target.classList.toggle('completed');
 }
