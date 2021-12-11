@@ -1,17 +1,17 @@
 const buttonAdd = document.querySelector('#criar-tarefa');
-buttonAdd.addEventListener('click', toDoList);
+const orderedList = document.querySelector('#lista-tarefas');
+const inputTask = document.querySelector('#texto-tarefa');
+
 function toDoList() {
-    const orderedList = document.querySelector('#lista-tarefas');
     const task = document.createElement('li')
     task.classList.add('task');
     task.addEventListener('dblclick', markCompleted);
     task.addEventListener('click', markOnClick);
-    const inputTask = document.querySelector('#texto-tarefa').value;
     const clearInput = document.querySelector('#texto-tarefa');
-    if (inputTask === '') {
+    if (inputTask.value === '') {
         alert('Não foi digitado nenhuma tarefa!');
     } else {
-        task.innerHTML = inputTask;
+        task.innerHTML = inputTask.value;
         orderedList.appendChild(task);
     }
     clearInput.value = '';
@@ -28,3 +28,5 @@ function markCompleted(e) {
     console.log(e);
     e.target.classList.toggle('completed');
 }
+
+buttonAdd.addEventListener('click', toDoList);
