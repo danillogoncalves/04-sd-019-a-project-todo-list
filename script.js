@@ -3,6 +3,8 @@ const orderedList = document.querySelector('#lista-tarefas');
 const inputTask = document.querySelector('#texto-tarefa');
 const buttonClearList = document.querySelector('#apaga-tudo');
 const buttonClearCompletedTasks = document.querySelector('#remover-finalizados');
+const buttonUp = document.querySelector('#mover-cima');
+const buttonDown = document.querySelector('#mover-baixo');
 
 function toDoList() {
     const task = document.createElement('li')
@@ -54,6 +56,22 @@ function clearCompletedTasks() {
     }
 }
 
+// function upTask() {
+//     if (!orderedList.firstElementChild) {
+//         alert('Não há tarefa(s) na lista!');
+//     } else if (!document.querySelector('.mark-task')) {
+//         alert('Marque um item da lista!');
+//     } else {
+//         if (document.querySelector('.mark-task').previousElementSibling) {
+
+//         }
+//     }
+// }
+
+
+
 buttonAdd.addEventListener('click', toDoList);
 buttonClearList.addEventListener('click', clearList);
 buttonClearCompletedTasks.addEventListener('click', clearCompletedTasks)
+buttonUp.addEventListener('click', upTask);
+buttonDown.addEventListener('click', downTask);
