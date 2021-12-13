@@ -73,5 +73,5 @@ function clearCompletedTasks() {
 buttonAdd.addEventListener('click', toDoList);
 buttonClearList.addEventListener('click', clearList);
 buttonClearCompletedTasks.addEventListener('click', clearCompletedTasks)
-buttonUp.addEventListener('click', upTask);
-buttonDown.addEventListener('click', downTask);
+// buttonUp.addEventListener('click', upTask);
+// buttonDown.addEventListener('click', downTask);
