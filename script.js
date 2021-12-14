@@ -59,6 +59,7 @@ function clearCompletedTasks() {
     }
 }
 
+// https://trybecourse.slack.com/archives/C017W4EDD4K/p1600300442399700
 function saveList() {
     localStorage.removeItem('todolist');
     let list = orderedList.children;
@@ -84,6 +85,7 @@ function renderSavedList () {
     }
 }
 
+// Tive ajuda da Lalá Nametala - Turma 19 - Tribo A
 function upTask() {
     if (!orderedList.firstElementChild) {
         alert('Não há tarefa(s) na lista!');
@@ -127,6 +129,7 @@ buttonUp.addEventListener('click', upTask);
 buttonDown.addEventListener('click', downTask);
 buttonRemove.addEventListener('click', removeTask)
 
+// Tive ajuda do Gabriel Melo - Turma 19 - Tribo A
 window.onload = function () {
     if (localStorage.length > 0) {
         renderSavedList()
